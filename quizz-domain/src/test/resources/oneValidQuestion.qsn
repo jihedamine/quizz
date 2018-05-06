@@ -1,0 +1,26 @@
+---
+?Anonymous inner classes always extend directly from the Object class.
+-True
+-Maybe
++False
+/#
+When you create an anonymous class for an interface, it extends from Object. For example,
+
+  *button.addActionListener( new ActionListener() {  
+    public void actionPerformed(ActionEvent ae) { } }  
+  );*
+
+But if you make an anonymous class from another class then it extends from that class. For example, consider the following class:
+
+*class MyListener implements ActionListener {   
+  public void actionPerformed(ActionEvent ae) {
+    System.out.println(\"MyListener class\");
+  }
+}
+
+button.addActionListener( new MyListener() {
+  public void actionPerformed(ActionEvent ae) {
+    System.out.println(\"Anonymous Listener class\");
+  }
+});*
+#/

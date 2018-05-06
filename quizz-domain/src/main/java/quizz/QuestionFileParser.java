@@ -29,7 +29,7 @@ public class QuestionFileParser {
                 while (line != null && !line.startsWith(Delimiter.QUESTION_ENTRY_DELIM)) {
                     line = reader.readLine();
                 }
-                if (line.startsWith(Delimiter.QUESTION_ENTRY_DELIM)) {
+                if (line != null && line.startsWith(Delimiter.QUESTION_ENTRY_DELIM)) {
                     StringBuilder sb = new StringBuilder();
                     line = reader.readLine();
                     while (line != null && !line.startsWith(Delimiter.QUESTION_ENTRY_DELIM)) {
@@ -45,17 +45,6 @@ public class QuestionFileParser {
         } catch (IOException e) {
             e.printStackTrace();
             return questions;
-        }
-    }
-
-
-
-    public static void main(String[] args) throws URISyntaxException {
-        URL url = ClassLoader.getSystemResource("question1.qsn");
-        System.out.println("URL " + url);
-        List<Question> questions = QuestionFileParser.getQuestions(Paths.get(url.toURI()));
-        for (Question question : questions) {
-            System.out.println(question);
         }
     }
 }

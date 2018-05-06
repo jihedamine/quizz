@@ -1,0 +1,38 @@
+---
+?Anonymous inner classes always extend directly from the Object class.
+-True
+-Maybe
++False
+/#
+When you create an anonymous class for an interface, it extends from Object. For example,
+
+  *button.addActionListener( new ActionListener() {  
+    public void actionPerformed(ActionEvent ae) { } }  
+  );*
+
+But if you make an anonymous class from another class then it extends from that class. For example, consider the following class:
+
+*class MyListener implements ActionListener {   
+  public void actionPerformed(ActionEvent ae) {
+    System.out.println(\"MyListener class\");
+  }
+}
+
+button.addActionListener( new MyListener() {
+  public void actionPerformed(ActionEvent ae) {
+    System.out.println(\"Anonymous Listener class\");
+  }
+});*
+#/
+---
+?Given an instance of a Stream, s, and a Collection, c, which are valid ways of creating a parallel stream? (Choose all that apply.)
+-A new ParallelStream(s)
+-B c.parallel()
+-C s.parallelStream()
++D c.parallelStream()
+-E new ParallelStream(c)
++F s.parallel()
+/#There is no such class as ParallelStream, so A and E are incorrect.
+The method defined in the Stream class to create a parallel stream from an existing stream is parallel();
+therefore F is correct and C is incorrect. The method defined in the Collection class to create a parallel stream
+from a collection is parallelStream(); therefore D is correct and B is incorrect.#/

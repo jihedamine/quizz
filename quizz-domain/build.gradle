@@ -1,5 +1,12 @@
+group 'jihedamine'
+version '1.0-SNAPSHOT'
+
+repositories {
+    jcenter()
+}
 dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.2'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.2'
+    runtime 'ch.qos.logback:logback-classic:1.2.3'
 }
 

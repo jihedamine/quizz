@@ -1,0 +1,12 @@
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web:2.0.0.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf:2.0.0.RELEASE"
+    compile 'org.springframework:spring-webflux:5.0.2.RELEASE'
+    compile 'org.springframework.data:spring-data-jpa:2.0.5.RELEASE'
+    compile 'javax.persistence:persistence-api:1.0.2'
+    compile 'org.springframework.data:spring-data-mongodb:2.0.5.RELEASE'
+    compile "org.springframework.boot:spring-boot-devtools:2.0.0.RELEASE"
+    compile "jihedamine:quizz-domain:1.0-SNAPSHOT"
+    testCompile "org.springframework.boot:spring-boot-starter-test:2.0.0.RELEASE"
+    testCompile "junit:junit:4.12"
+}
